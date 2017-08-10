@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_METHOD} POST
+RewriteRule ^receipts/customer/*$ ./receipts.php?request=customer&action=save
+
+RewriteRule ^receipts/(\d+)/(\d+)*$  ./receipts.php?request=receipts&year=$1&month=$2 [L]
+RewriteRule ^receipts/customer/*$ ./receipts.php?request=customer&action=get [L]
+RewriteRule ^receipts/*$  ./receipts.php?request=receipts [L]
+
+
+
